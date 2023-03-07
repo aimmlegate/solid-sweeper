@@ -55,7 +55,7 @@ export function floodFillReveal(field: Field, x: number, y: number) {
 export function revealAllBombs(field: Field) {
   field.forEach((row) => {
     row.forEach((cell) => {
-      if (cell.payload === "bomb") {
+      if (cell.payload === "bomb" && cell.state !== "marked") {
         cell.state = "revealed";
       }
     });
